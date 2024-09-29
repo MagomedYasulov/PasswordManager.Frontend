@@ -42,7 +42,7 @@
 			</Button>
 		</Panel>-->
 		
-		<Panel>
+		<Panel Margin="0,40,0,0" >
 			<views:PasswordsView/>
 		</Panel>		
 	</Panel>
