@@ -3,11 +3,20 @@
         xmlns:vm="using:PasswordManager.Frontend.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+		mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="PasswordManager.Frontend.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="PasswordManager.Frontend">
+        Title="PasswordManager.Frontend"
+		TransparencyLevelHint="AcrylicBlur"
+		Background="Transparent"
+		ExtendClientAreaToDecorationsHint="True"
+		Height="500"
+		Width="350"
+		CanResize="False"
+		WindowStartupLocation="CenterOwner"
+		ExtendClientAreaChromeHints="Default">
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
@@ -15,6 +24,39 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+	<Panel>
+		<ExperimentalAcrylicBorder IsHitTestVisible="False">
+			<ExperimentalAcrylicBorder.Material>
+				<ExperimentalAcrylicMaterial
+					BackgroundSource="Digger"
+					TintColor="Black"
+					TintOpacity="1"
+					MaterialOpacity="0.65" />
+			</ExperimentalAcrylicBorder.Material>
+		</ExperimentalAcrylicBorder>
+
+		<!--<Panel HorizontalAlignment="Stretch" VerticalAlignment="Top">
+			<Button Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Top" >
+				<materialIcons:MaterialIcon Kind="WindowClose" />
+			</Button>
+		</Panel>-->
+		
+		<DockPanel>
+			<DockPanel DockPanel.Dock="Top" Margin="10,40,10,0">
+				<Button Background="Transparent" DockPanel.Dock="Left" HorizontalAlignment="Right" VerticalAlignment="Top">
+					<materialIcons:MaterialIcon Kind="Plus" />
+					
+				</Button>
+				<Button Background="Transparent" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Top">
+					<PathIcon Data="{StaticResource person_accounts_regular}" />
+				</Button>
+				<TextBox Background="Transparent" Margin="5,0,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Watermark="Search for passwords...." />
+			</DockPanel>
+			<ListBox></ListBox>
+		
+		</DockPanel>
+		
+		
+	</Panel>
 
 </Window>
