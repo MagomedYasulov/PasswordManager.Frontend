@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+		xmlns:views="using:PasswordManager.Frontend"
 		mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="PasswordManager.Frontend.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
@@ -41,22 +42,9 @@
 			</Button>
 		</Panel>-->
 		
-		<DockPanel>
-			<DockPanel DockPanel.Dock="Top" Margin="10,40,10,0">
-				<Button Background="Transparent" DockPanel.Dock="Left" HorizontalAlignment="Right" VerticalAlignment="Top">
-					<materialIcons:MaterialIcon Kind="Plus" />
-					
-				</Button>
-				<Button Background="Transparent" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Top">
-					<PathIcon Data="{StaticResource person_accounts_regular}" />
-				</Button>
-				<TextBox Background="Transparent" Margin="5,0,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Watermark="Search for passwords...." />
-			</DockPanel>
-			<ListBox></ListBox>
-		
-		</DockPanel>
-		
-		
+		<Panel>
+			<views:PasswordsView/>
+		</Panel>		
 	</Panel>
 
 </Window>
