@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-		xmlns:views="using:PasswordManager.Frontend"
+		xmlns:views="using:PasswordManager.Frontend.Views"
 		mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="PasswordManager.Frontend.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
